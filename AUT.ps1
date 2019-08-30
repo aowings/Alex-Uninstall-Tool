@@ -1,3 +1,7 @@
+$yes1 =0;
+$yes2 =0;
+$yes3 =0;
+$yes4 =0;
 Write-host "Hello! This tool is designed to help you completely 
 remove Microsoft Office products 2010 and higher.
 Please save any documents you may have open before continuing."-ForegroundColor Blue
@@ -17,12 +21,12 @@ Write-host "Would you like to to continue (Default is No)" -ForegroundColor Yell
        Y {Write-host "Yes"; $yes2=$true} 
        N {Write-Host "No"; $yes2=$false} 
        Default {Write-Host "Default, Skip PublishSettings"; $yes2=$false} 
-     }}  elseif($yes1=$false){
+     }}else{
       Write-host "Quitting" -ForegroundColor Pink
       exit
      }
-     elseif($yes2=$true){
-      Write-host"Does your profile currently work?"-ForegroundColor Blue
+     if($yes2=$true){
+      Write-host "Does your profile currently work?"-ForegroundColor Blue
      $Readhost = Read-Host " ( y / n ) " 
     Switch ($ReadHost) 
      { 
@@ -30,7 +34,7 @@ Write-host "Would you like to to continue (Default is No)" -ForegroundColor Yell
        N {Write-Host "No"; $yes3=$false} 
        Default {Write-Host "Default, Skip PublishSettings"; $yes3=$false} 
      } } elseif($yes2=$false){
-      Write-host"do you want to start the process?"-ForegroundColor Blue
+      Write-host "do you want to start the process?"-ForegroundColor Blue
      $Readhost = Read-Host " ( y / n ) " 
     Switch ($ReadHost) 
      { 
